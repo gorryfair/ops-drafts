@@ -5,8 +5,8 @@
 Network Working Group                                      M. Kuehlewind
 Internet-Draft                                                  Ericsson
 Intended status: Informational                               B. Trammell
-Expires: 12 August 2021                                           Google
-                                                         8 February 2021
+Expires: 16 August 2021                                           Google
+                                                        12 February 2021
 
 
               Applicability of the QUIC Transport Protocol
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 12 August 2021.
+   This Internet-Draft will expire on 16 August 2021.
 
 Copyright Notice
 
@@ -146,9 +146,9 @@ Table of Contents
 
    Moreover, while encryption (in this case TLS) is inseparably
    integrated with QUIC, TLS negotiation over TCP can be blocked.  If
-   TLS over TCP cannot be supported, the connection should rather be
-   aborted instead in order to enable the application to present a
-   suitable prompt to the user that secure communication is unavailable.
+   TLS over TCP cannot be supported, the connection should be aborted
+   instead, in order to enable the application to present a suitable
+   prompt to the user that secure communication is unavailable.
 
 3.  Zero RTT
 
