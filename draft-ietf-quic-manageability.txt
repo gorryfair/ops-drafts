@@ -5,8 +5,8 @@
 Network Working Group                                      M. Kuehlewind
 Internet-Draft                                                  Ericsson
 Intended status: Informational                               B. Trammell
-Expires: 16 August 2021                                           Google
-                                                        12 February 2021
+Expires: 19 August 2021                                           Google
+                                                        15 February 2021
 
 
               Manageability of the QUIC Transport Protocol
@@ -35,7 +35,7 @@ Status of This Memo
    time.  It is inappropriate to use Internet-Drafts as reference
    material or to cite them other than as "work in progress."
 
-   This Internet-Draft will expire on 16 August 2021.
+   This Internet-Draft will expire on 19 August 2021.
 
 Copyright Notice
 
@@ -969,8 +969,9 @@ Table of Contents
    acknowledgment signaling is carried inside QUIC's encrypted payload,
    and ACK manipulation is impossible.  Specifically, heuristics
    attempting to distinguish ACK-only packets from payload-carrying
-   packets based on packet size are likely to fail, and are emphatically
-   NOT RECOMMENDED.
+   packets based on packet size are likely to fail, and are not
+   recommended to use as a way to construe internals of QUIC's operation
+   as those mechanisms can change, e.g., due to the use of extensions.
 
 4.7.  Quality of Service handling and ECMP
 
@@ -1262,14 +1263,14 @@ Table of Contents
 
    [QUIC-TLS] Thomson, M. and S. Turner, "Using TLS to Secure QUIC",
               Work in Progress, Internet-Draft, draft-ietf-quic-tls-34,
-              14 January 2021, <http://www.ietf.org/internet-drafts/
-              draft-ietf-quic-tls-34.txt>.
+              14 January 2021, <https://www.ietf.org/archive/id/draft-
+              ietf-quic-tls-34.txt>.
 
    [QUIC-TRANSPORT]
               Iyengar, J. and M. Thomson, "QUIC: A UDP-Based Multiplexed
               and Secure Transport", Work in Progress, Internet-Draft,
               draft-ietf-quic-transport-34, 14 January 2021,
-              <http://www.ietf.org/internet-drafts/draft-ietf-quic-
+              <https://www.ietf.org/archive/id/draft-ietf-quic-
               transport-34.txt>.
 
 10.2.  Informative References
@@ -1281,18 +1282,18 @@ Table of Contents
               papers/2015/July/0000000-0000002.pdf>.
 
    [DOTS-ARCH]
-              Mortensen, A., Reddy.K, T., Andreasen, F., Teague, N., and
-              R. Compton, "Distributed-Denial-of-Service Open Threat
-              Signaling (DOTS) Architecture", Work in Progress,
-              Internet-Draft, draft-ietf-dots-architecture-18, 6 March
-              2020, <http://www.ietf.org/internet-drafts/draft-ietf-
-              dots-architecture-18.txt>.
+              Mortensen, A., Reddy, T., Andreasen, F., Teague, N., and
+              R. Compton, "DDoS Open Threat Signaling (DOTS)
+              Architecture", Work in Progress, Internet-Draft, draft-
+              ietf-dots-architecture-18, 6 March 2020,
+              <https://www.ietf.org/archive/id/draft-ietf-dots-
+              architecture-18.txt>.
 
    [I-D.ietf-quic-applicability]
               Kuehlewind, M. and B. Trammell, "Applicability of the QUIC
               Transport Protocol", Work in Progress, Internet-Draft,
               draft-ietf-quic-applicability-09, 22 January 2021,
-              <http://www.ietf.org/internet-drafts/draft-ietf-quic-
+              <https://www.ietf.org/archive/id/draft-ietf-quic-
               applicability-09.txt>.
 
    [IPIM]     Allman, M., Beverly, R., and B. Trammell, "In-Protocol
@@ -1303,26 +1304,28 @@ Table of Contents
               Kuehlewind, M. and B. Trammell, "Applicability of the QUIC
               Transport Protocol", Work in Progress, Internet-Draft,
               draft-ietf-quic-applicability-09, 22 January 2021,
-              <http://www.ietf.org/internet-drafts/draft-ietf-quic-
+              <https://www.ietf.org/archive/id/draft-ietf-quic-
               applicability-09.txt>.
 
    [QUIC-HTTP]
               Bishop, M., "Hypertext Transfer Protocol Version 3
               (HTTP/3)", Work in Progress, Internet-Draft, draft-ietf-
-              quic-http-33, 15 December 2020, <http://www.ietf.org/
-              internet-drafts/draft-ietf-quic-http-33.txt>.
+              quic-http-34, 2 February 2021,
+              <https://www.ietf.org/archive/id/draft-ietf-quic-http-
+              34.txt>.
 
    [QUIC-INVARIANTS]
               Thomson, M., "Version-Independent Properties of QUIC",
               Work in Progress, Internet-Draft, draft-ietf-quic-
-              invariants-13, 14 January 2021, <http://www.ietf.org/
-              internet-drafts/draft-ietf-quic-invariants-13.txt>.
+              invariants-13, 14 January 2021,
+              <https://www.ietf.org/archive/id/draft-ietf-quic-
+              invariants-13.txt>.
 
    [QUIC_LB]  Duke, M. and N. Banks, "QUIC-LB: Generating Routable QUIC
               Connection IDs", Work in Progress, Internet-Draft, draft-
-              ietf-quic-load-balancers-05, 30 October 2020,
-              <http://www.ietf.org/internet-drafts/draft-ietf-quic-load-
-              balancers-05.txt>.
+              ietf-quic-load-balancers-06, 4 February 2021,
+              <https://www.ietf.org/archive/id/draft-ietf-quic-load-
+              balancers-06.txt>.
 
    [RFC2475]  Blake, S., Black, D., Carlson, M., Davies, E., Wang, Z.,
               and W. Weiss, "An Architecture for Differentiated
@@ -1367,10 +1370,10 @@ Table of Contents
               Port Numbers", BCP 165, RFC 7605, DOI 10.17487/RFC7605,
               August 2015, <https://www.rfc-editor.org/info/rfc7605>.
 
-   [TLS-ESNI] Rescorla, E., Oku, K., Sullivan, N., and C. Wood, "TLS
+   [TLS-ESNI] Rescorla, E., Oku, K., Sullivan, N., and C. A. Wood, "TLS
               Encrypted Client Hello", Work in Progress, Internet-Draft,
               draft-ietf-tls-esni-09, 16 December 2020,
-              <http://www.ietf.org/internet-drafts/draft-ietf-tls-esni-
+              <https://www.ietf.org/archive/id/draft-ietf-tls-esni-
               09.txt>.
 
    [TMA-QOF]  Trammell, B., Gugelmann, D., and N. Brownlee, "Inline Data
