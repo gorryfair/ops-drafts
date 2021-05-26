@@ -92,8 +92,10 @@ design with respect to network treatment, and a description of how common
 network management practices will be impacted by QUIC.
 
 Since QUIC's wire image {{?WIRE-IMAGE=RFC8546}} is integrity protected and not
-modifiable on path, in-network operations are not possible without terminating
-the QUIC connection, for instance using a back-to-back proxy. Proxy operations
+modifiable on path, in-network operations on the transport header
+are not possible without terminating the QUIC connection 
+{{?I-D.ietf-tsvwg-transport-encrypt}}, for instance using a back-to-back proxy. 
+Proxy operations
 are not in scope for this document. A proxy can either explicit identify itself
 as providing a proxy service, or may share the TLS credentials to authenticate
 as the server and (in some cases) client acting as a front-facing instance for
@@ -733,7 +735,7 @@ signaling for a given connection can use a fixed spin value for the duration of
 the connection, or can set the bit randomly on each packet sent.
 
 When in use and a QUIC flow sends data continuously, the latency spin bit in
-each direction changes value once per round-trip time (RTT). An on-path observer
+each direction changes value once per RTT. An on-path observer
 can observe the time difference between edges (changes from 1 to 0 or 0 to 1) in
 the spin bit signal in a single direction to measure one sample of end-to-end
 RTT.
@@ -813,8 +815,16 @@ discouraged for NAT applications.
 
 Limited RTT measurement is possible by passive observation of QUIC traffic;
 see {{sec-rtt}}. No passive measurement of loss is possible with the present
-wire image. Extremely limited observation of upstream congestion may be
+wire image. Limited observation of upstream congestion may be
 possible via the observation of CE markings on ECN-enabled QUIC traffic.
+
+On-path devices can make measurements of RTT, loss and other performance metrics
+when additional information is carried in an additional network-layer 
+packet header (see section 6 of
+{{?I-D.ietf-tsvwg-transport-encrypt}} describing use of operations,
+administration and management (OAM) information).
+Using network-layer approaches also has the potential that common observation
+and analysis tools can be consistently used by multiple transport protocols.
 
 ## Server Cooperation with Load Balancers {#sec-loadbalancing}
 
@@ -891,7 +901,7 @@ Some deployed in-network functions distinguish pure-acknowledgment (ACK) packets
 from packets carrying upper-layer data in order to attempt to enhance
 performance, for example by queueing ACKs differently or manipulating ACK
 signaling. Distinguishing ACK packets is trivial in TCP, but not supported by
-QUIC, since acknowledgment signaling is carried inside QUIC's encrypted payload,
+QUIC, since acknowledgment signaling is carried inside QUIC's t-ted payload,
 and ACK manipulation is impossible. Specifically, heuristics attempting to
 distinguish ACK-only packets from payload-carrying packets based on packet size
 are likely to fail, and are not recommended to use as a way to construe
